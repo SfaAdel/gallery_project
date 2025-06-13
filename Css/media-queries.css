@@ -1,0 +1,165 @@
+/* index-media */
+@media (max-width: 1600px) {
+  nav ul {
+    width: 40%;
+  }
+  .teams-sect .card {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 1400px) {
+  nav .logo {
+    width: 30%;
+  }
+}
+
+@media (max-width: 1250px) {
+}
+
+@media (max-width: 1000px) {
+  nav .logo {
+    width: 40%;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    height: fit-content;
+    position: absolute;
+    z-index: 5;
+    top: 70px;
+    right: 145px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .nav-links li{
+    padding-block: 10px;
+    
+  }
+  .nav-links li a{
+    color: aliceblue;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+@media (max-width: 650px) {
+  .nav-links{
+    right: 60px;
+  }
+  nav ul {
+    width: 50%;
+  }
+  nav ul li a {
+    font-size: medium;
+  }
+  nav .join {
+    display: none;
+  }
+  header {
+    padding: 20px;
+    text-align: center;
+  }
+  header .header-content h1{
+    font-size: x-large;
+  }
+  header .header-content p{
+    font-size: small;
+  }
+  .our-teams p {
+    padding: 20px;
+  }
+  footer {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    gap: 20px;
+    text-align: center;
+    padding: 20px;
+  }
+  footer .techno {
+    width: 100%;
+    margin: auto;
+    grid-column: 1 / span 2;
+  }
+  footer .contact-us {
+    grid-column: 1 / span 2;
+  }
+}
+@media (max-width: 500px) {
+  body{
+    background-color: white;
+  }
+  nav .logo {
+    width: 70%;
+  }
+  header .header-content h1{
+    font-size: large;
+  }
+  header .header-content p{
+    font-size: smaller;
+  }
+  header .buttons a{
+    padding: 10px;
+  }
+  main .card .buttons{
+    padding-inline: 15px;
+  }
+  main .card .buttons a{
+    padding: 10px;
+  }
+  main .card .card-info{
+    margin:10px 0 0 0;
+  }
+  main .card .card-info p{
+    padding: 10px;
+  }
+  main {
+    padding: 15px;
+  }
+  .head {
+    flex-direction: column;
+  }
+  .head .image {
+    width: 100%;
+  }
+  
+  .head-info {
+    width: 100%;
+    padding: 5px;
+  }
+  .head-info h2 {
+    font-size: large;
+  }
+  .image-sect {
+    padding: 15px 0;
+  }
+  .image-sect .main-view {
+    width: 90%;
+    height: auto;
+  }
+  .image-sect .main-view img {
+    object-fit: contain;
+  }
+  .image-sect .side-view {
+    width: 100%;
+    height: 5dvh;
+    padding: 0;
+    margin: 10px 0;
+    justify-content: space-evenly;
+  }
+  .team-page .cards .card {
+    margin: 0;
+    width: 100%;
+  }
+  .team-page .cards .card img:hover {
+    scale: 1;
+  }
+}

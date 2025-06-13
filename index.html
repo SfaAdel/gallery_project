@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- *!Links* -->
+    <!-- ******** -->
+    <link rel="stylesheet" href="Css/master.css" />
+    <link rel="stylesheet" href="Css/media-queries.css" />
+    <!-- Font-Awosem -->
+    <!-- *=========* -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <!-- Googl Fonts -->
+    <!-- *=========* -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Knewave&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Gallery Project</title>
+    <style>
+      .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
+
+      .follow {
+        background-color: #9b87f5;
+        color: white;
+      }
+
+      .follow:hover {
+        background-color: #9b87f5;
+      }
+
+      .following {
+        background-color: #e0e0e0;
+        color: #333;
+      }
+
+      .following:hover {
+        background-color: #d5d5d5;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Nav-Start -->
+    <!-- *=======* -->
+    <nav>
+      <div class="logo"><img src="Src/logo.png" alt="" /></div>
+      <ul class="navbar nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="Html/Teams.html">Teams</a></li>
+        <li><a href="Html/about.html">About</a></li>
+        <li><a href="Html/Get-in-touch.html">Get In Touch</a></li>
+        <li><a href="Html/sign-in.html">Sign In</a></li>
+      </ul>
+      <div class="menu-icon" id="menuIcon">&#9776;</div>
+      <a href="Html/Get-in-touch.html" class="join">Join Us</a>
+    </nav>
+
+    <!-- *Header-Start -->
+    <!-- ********** -->
+    <header>
+      <div class="header-content">
+        <h1>Discover Exceptional Teams</h1>
+        <p>
+          Explore innovative projects and meet the talented teams behind them
+        </p>
+        <div class="buttons">
+          <a href="Html/Teams.html" class="teams">Explore All Teams</a>
+          <a href="Html/Get-in-touch.html" class="join">Join Us</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- *Our-featured-Teams-Sect -->
+      <!-- *======================* -->
+      <section class="our-teams">
+        <!-- Heading for whole section -->
+        <div class="heading">
+          <h1>Our Featured Teams</h1>
+          <p>
+            Meet the trailblazers, visionaries, and innovators who are redefining what’s possible—one project at a time.
+          </p>
+        </div>
+
+        <div class="cards">
+          <!-- frist-card -->
+          <!-- *========* -->
+
+          <div class="card">
+            <img src="Src/images/team.jpeg" alt="" />
+            <div class="card-info">
+              <h1>AI Sign Language</h1>
+              <p>
+                The Scratch Games (AI Sign Language) team develops educational games that use AI to recognize and teach sign language. Their projects make learning sign language accessible and engaging, promoting inclusivity and communication for all.
+              </p>
+            </div>
+
+            <div class="buttons">
+              <a href="Html/4-arduino-sensor-hardware.html" class="teams">View Team</a>
+              <button id="followBtn" class="btn follow">Follow</button>
+            </div>
+          </div>
+
+          <!-- second-card -->
+          <!-- *=========* -->
+          <div class="card">
+            <img src="Src/app-enventor-ai/team-pic.jpg" alt="" />
+            <div class="card-info">
+              <h1>Ai Chat Bot</h1>
+              <p>
+                Meet the Ai Chat Bot team—masters of conversation and artificial intelligence! They design bots that understand, respond, and learn, making technology more human and helpful every day.
+              </p>
+            </div>
+
+            <div class="buttons">
+              <a href="Html/1-app-inventor-ai-cb.html" class="teams">View Team</a>
+              <button id="followBtn" class="btn follow">Follow</button>
+            </div>
+          </div>
+
+          <!-- third-card -->
+          <!-- *========* -->
+
+          <div class="card">
+            <img src="Src/web/main.jpeg" alt="" />
+            <div class="card-info">
+              <h1>Gallery Website</h1>
+              <p>
+                The Web Design team crafts stunning, interactive websites that blend creativity with usability. Their digital masterpieces connect people, ideas, and opportunities across the globe.
+              </p>
+            </div>
+
+            <div class="buttons">
+              <a href="Html/8-web-design-gallery-web.html" class="teams">View Team</a>
+              <button id="followBtn" class="btn follow">Follow</button>
+            </div>
+          </div>
+        </div>
+        <a href="Html/Teams.html" class="teams">view All Teams</a>
+      </section>
+    </main>
+    <footer>
+      <section class="techno">
+        <h2>Techno Square</h2>
+        <p>
+          Discover exceptional teams and innovative projects. Join our community
+          of talented professionals today.
+        </p>
+        <!-- Techno-Social-media- -->
+        <!-- *==================* -->
+        <ul class="social-links">
+          <li>
+            <a href="https://www.facebook.com/techno.square.pts"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/techno_square_pts/"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.tiktok.com/@techno.square"
+              ><i class="fa-brands fa-tiktok"></i
+            ></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          </li>
+        </ul>
+      </section>
+      <!-- Footer-Quick-Links -->
+      <!-- *================* -->
+      <section class="quick-links">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Html/Teams.html">Teams</a></li>
+          <li><a href="Html/about.html">About</a></li>
+          <li><a href="Html/Get-in-touch.html">Get in touch</a></li>
+        </ul>
+      </section>
+      <!-- Footer-teams -->
+      <!-- *==========* -->
+      <section class="featured-teams">
+        <h2>Featured Teams</h2>
+        <ul>
+          <li><a href="#">Team Innovate</a></li>
+          <li><a href="#">Team Vision</a></li>
+          <li><a href="#">Team Quantum</a></li>
+          <li><a href="#">Team Pulse</a></li>
+          <li><a href="#">Team Spark</a></li>
+        </ul>
+      </section>
+      <!-- Footer-contacts -->
+      <!-- *=============* -->
+ <section class="contact-us">
+        <h2>Contact Us</h2>
+        <p><i class="fa-solid fa-envelope"></i> contact@teamscape.com</p>
+        <p><i class="fa-solid fa-phone"></i> (555) 123-4567</p>
+        <p>
+          <i class="fa-solid fa-location-dot"></i> 123 Innovation Street, Tech
+          City
+        </p>
+      </section>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>

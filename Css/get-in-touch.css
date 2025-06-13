@@ -1,0 +1,171 @@
+/* Get-in-touch-page */
+/* *===============* */
+.contact-main {
+  width: 70%;
+  margin-inline: auto;
+  padding-block: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.contact-main .contact-page-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.contact-page-info p {
+  margin-top: 10px;
+  color: #4b4b4be3;
+}
+.contact-page-info .social {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+}
+.contact-page-info .social i {
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--off-white);
+  background: linear-gradient(
+    60deg,
+    rgba(87, 111, 199, 1) 0%,
+    rgba(222, 83, 237, 1) 80%
+  );
+}
+.contact-page-info .social:nth-of-type(3) i {
+  background: linear-gradient(
+    1290deg,
+    rgba(87, 111, 199, 1) 0%,
+    rgba(222, 83, 237, 1) 80%
+  );
+}
+
+.contact-page-info .social-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 50px;
+  width: 100%;
+}
+.contact-page-info .social-links i {
+  scale: 2;
+  display: flex;
+  align-items: center;
+  transition: all ease-in-out 0.2s;
+}
+.contact-page-info .social-links i:hover {
+  margin-bottom: 10px;
+}
+.social-links .f:hover {
+  color: cornflowerblue;
+}
+.social-links .insta:hover {
+  color: darkorchid;
+}
+.social-links .tik:hover {
+  margin: 0;
+  padding: 5px 5px;
+  color: aliceblue;
+  background-color: black;
+  border-radius: 5px;
+}
+.social-links .linked:hover {
+  color: cornflowerblue;
+}
+.form-sect form {
+  width: 30dvw;
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  align-items: center;
+  gap: 10px;
+  padding: 75px;
+  margin-inline: auto;
+}
+.form-sect form input:not(#submit-btn, #password) {
+  width: 30dvw;
+  height: 20px;
+  font-size: larger;
+  padding: 15px;
+  border-radius: 10px;
+  border: solid gray 0.5px;
+  color: rgb(86, 92, 192);
+}
+.form-sect form #l-more {
+  width: 100%;
+}
+.form-sect form .pass-sect {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+.form-sect form .pass-sect input {
+  flex-grow: 1;
+  padding: 15px 10px;
+  border: solid gray 0.5px;
+  border-radius: 10px;
+  font-size: large;
+}
+.creat-account {
+  width: 100%;
+}
+.have-account {
+  width: 100%;
+  align-self: flex-start;
+}
+.form-sect form #submit-btn {
+  width: 50%;
+  height: 50px;
+  margin: auto;
+  font-size: larger;
+  padding: 10px;
+  background: linear-gradient(
+    1290deg,
+    rgba(87, 111, 199, 1) 0%,
+    rgba(222, 83, 237, 1) 80%
+  );
+  color: var(--white);
+  border-radius: 10px;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+.form-sect form #submit-btn:hover {
+  border: solid 0.5px gray;
+  scale: 1.01;
+}
+.form-sect form label {
+  align-self: flex-start;
+}
+
+/* Ensure social icon colors don't change when wrapped in <a> */
+.social-links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.social-links a:hover,
+.social-links a:focus {
+  color: inherit;
+}
+
+@media (max-width: 750px) {
+  main {
+    padding-inline: 20px;
+  }
+  .contact-main {
+    flex-direction: column;
+  }
+  .form-sect form {
+    width: 100%;
+    padding: 0 0 50px 0;
+  }
+  .form-sect form label {
+    width: 100%;
+  }
+  .form-sect form input {
+    flex-grow: 1;
+  }
+}

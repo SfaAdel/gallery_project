@@ -1,0 +1,123 @@
+
+h1{
+    margin-block:30px;
+}
+main{
+    padding: 0 100px;
+    margin-block:40px ;
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  height:65dvh;
+  padding: 10px;
+  border-radius:20px ;
+  box-shadow: 0px 0px 48px -15px rgba(66, 68, 90, 0.92); 
+}
+.image {
+  border-radius: 16px;
+  width: 50%;
+  overflow: hidden;
+  
+}
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.head-info {
+  width: 50%;
+  padding: 30px;
+  overflow-y: scroll;
+}
+.head-info h2{
+    margin-top:20px;
+    font-size: xx-large;
+}
+.head-info p{
+    margin-top:10px;
+    font-size: large;
+    opacity: .8;
+}
+.image-sect{
+    width: 100%;
+    padding: 50px 0;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 48px -15px rgba(66, 68, 90, 0.92); 
+}
+.image-sect .main-view{
+    width: 80%;
+    height: 50dvh;
+    overflow: hidden;
+}
+.image-sect .main-view img{
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+}
+.image-sect .side-view{
+    width: 80%;
+    height: 20dvh;
+    margin-block: 20px;
+    padding:  10px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+} 
+.image-sect .side-view img{
+    width: 20%;
+    height: 100%;
+    margin-inline: 10px;
+    border-radius: 16px;
+    opacity: .7;
+    object-fit: cover;
+    transition: all ease-in-out .2s;
+}
+.image-sect .side-view img:hover{
+    opacity: 1;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+.cards .card{
+    width: 20dvw;
+    height: 54dvh;
+    padding: 20px;
+    display: flex;
+    
+}
+.cards .card:hover{
+    box-shadow: 0px 0px 48px -15px rgba(66, 68, 90, 0.92); 
+}
+.cards .card img:hover{
+    scale: 1.2;
+}
+.cards .card p{
+    color: blueviolet;
+}
+.join-sect {
+  display: flex;
+  flex-flow:column wrap ;
+  justify-content: center;
+  align-items:center ;
+  gap: 30px;
+  margin-block:50px;
+}
+
+.join-sect a{
+    padding: 10px;
+    border-radius: 10px;
+    transition: all ease-in-out .2s;
+}
+
+.cards .card h3,p{
+    margin-block: 15px
+}
+

@@ -1,0 +1,505 @@
+/* From Uiverse.io by Daniel1227k */
+/* Modern animated team card with site colors */
+.card {
+  position: relative;
+  width: 270px;
+  height: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  box-shadow: 0 8px 40px -12px #576fc744, 0 1.5px 8px #de53ed22;
+  overflow: hidden;
+  background: none;
+  border: none;
+  margin: 0;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(315deg, #576fc72d 60%, #dd53ed1f 100%);
+  z-index: 1;
+  transition: 0.4s;
+  animation: borderGlow 2.5s linear infinite alternate;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  /* background: linear-gradient(315deg, #576fc732 60%, #dd53ed2c 100%); */
+  filter: blur(10px);
+  z-index: 1;
+  opacity: 0.5;
+  transition: 0.4s;
+}
+
+.card b {
+  position: absolute;
+  inset: 8px;
+  background: rgba(0, 0, 0, 0.415);
+  z-index: 2;
+  border-radius: 20px;
+}
+
+/* Header with background image and overlay */
+.about-header {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  /* border-radius: 0 0 32px 32px; */
+  margin-bottom: 32px;
+  overflow: hidden;
+  box-shadow: 0 2px 24px #0002;
+}
+.about-header .header-bg {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(120deg, rgba(87, 111, 199, 0.264) 0%, rgba(206, 83, 237, 0.396) 100%),
+    url('../Src/about/bg5.png') center/cover no-repeat;
+  z-index: 1;
+  filter: brightness(0.85) saturate(1.2);
+  animation: gradientMove 8s linear infinite alternate;
+  background-size: 200% 200%;
+}
+.about-header .header-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 64px 16px 48px 16px;
+}
+.about-header h1 {
+  font-family: 'Knewave', cursive;
+  font-size: 2.8rem;
+  margin-bottom: 18px;
+  letter-spacing: 2px;
+  text-shadow: 0 6px 32px #0008, 0 1px 0 #fff2;
+  color: #fff;
+}
+.about-header p {
+  font-size: 1.25rem;
+  opacity: 0.98;
+  text-shadow: 0 2px 8px #0007;
+  color: #f7fafd;
+}
+
+/* Team grid responsive layout */
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin: 48px auto 64px auto;
+  max-width: 1200px;
+}
+
+/* Card image styling */
+/* .card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  opacity: 0.85;
+  scale: 1;
+  transition: 0.5s;
+} */
+
+.card:hover img {
+  scale: 0.9;
+  opacity: 1;
+  transform: translateY(-20px);
+}
+.card{
+   transition: transform 1s cubic-bezier(.23,1.02,.32,1);
+}
+/* Adjust card content position for image */
+.card .content {
+  position: absolute;
+  z-index: 4;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.card:hover .content {
+  transform: scale(1.04);
+  bottom: 14px;
+}
+
+.content .title {
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.1em;
+  font-size: 1.15em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  /* margin-bottom: 12px; */
+  pointer-events: auto;
+  transition: 0.4s;
+}
+
+.content .title span {
+  font-weight: 300;
+  font-size: 0.8em;
+  letter-spacing: 0.05em;
+}
+
+/* Hide social icons by default, keep them in flow under the title */
+.content .sci {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+  padding: 5px;
+  opacity: 0;
+  max-height: 0;
+  pointer-events: none;
+  transform: translateY(20px) scale(0.7);
+  transition:
+    opacity 0.7s cubic-bezier(.23,1.02,.32,1),
+    max-height 1s cubic-bezier(.23,1.02,.32,1),
+    transform 1s cubic-bezier(.23,1.02,.32,1);
+  overflow: hidden;
+}
+
+/* Show and animate social icons on card hover */
+.card:hover .sci {
+  opacity: 1;
+  max-height: 100px;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+/* Animate each icon with a rotation on hover */
+.sci li a {
+  color: rgba(255,255,255,0.7);
+  background: rgba(87, 111, 199, 0.25);
+  width: 34px;
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  transition: 
+    color 0.3s,
+    background 0.3s,
+    box-shadow 0.3s,
+    transform 1s cubic-bezier(.23,1.02,.32,1);
+  box-shadow: 0 2px 8px #576fc733;
+  text-decoration: none;
+  /* will-change: transform; */
+}
+
+.sci li a:hover {
+  color: #de53ed;
+  background: #fff;
+  box-shadow: 0 4px 16px #de53ed33;
+  transform: rotate(0deg) scale(1.15);
+}
+
+.card:hover  a {
+  box-shadow: 0 4px 16px #de53ed33;
+  transform: rotate(360deg) ;
+}
+
+/* Individual backgrounds for each member */
+.card.jumana {
+  background-image: url(../Src/about/jumana.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.card.mariam {
+  background-image: url(../Src/about/mariam.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.card.hesham {
+  background-image: url(../Src/web/elsawe.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.card.nour_eladawy {
+  background-image: url(../Src/web/nour.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.card.amira {
+  background-image: url(../Src/about/amira.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.card.abdullah {
+  background-image: url(../Src/web/abd-allah.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.card.karem {
+  background-image: url(../Src/web/karim.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.card.nour_zromba {
+  background-image: url(../Src/about/nour_zromba.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.card.adam {
+  background-image: url(../Src/web/adam.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* What We Offer section with icons */
+.about-values ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 36px;
+  margin-top: 32px;
+  padding: 0;
+  list-style: none;
+}
+.about-values li {
+  background: var(--off-white, #f7fafd);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px #576fc71a;
+  padding: 32px 22px 24px 22px;
+  min-width: 240px;
+  max-width: 340px;
+  flex: 1 1 260px;
+  margin: 0;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.about-values li {
+  background: linear-gradient(135deg, #f7fafd 80%, #e9e4f0 100%);
+  border-radius: 22px;
+  box-shadow: 0 4px 32px #576fc733, 0 1.5px 8px #de53ed22;
+  padding: 38px 28px 28px 28px;
+  min-width: 240px;
+  max-width: 340px;
+  flex: 1 1 260px;
+  margin: 0;
+  transition: box-shadow 0.3s, transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.about-values li:hover {
+  box-shadow: 0 12px 48px #de53ed55, 0 2px 12px #576fc744;
+  transform: translateY(-10px) scale(1.05);
+}
+.offer-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 2.2rem;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 16px #576fc744;
+  border: 3px solid #fff3;
+  background: linear-gradient(135deg, #576fc7 60%, #de53ed 100%);
+  transition: transform 0.7s cubic-bezier(.23,1.02,.32,1);
+  animation: pulse 2.2s infinite alternate cubic-bezier(.23,1.02,.32,1);
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 #de53ed33; }
+  100% { box-shadow: 0 0 16px 8px #de53ed33; }
+}
+.about-values li:nth-child(2) .offer-icon {
+  background: linear-gradient(135deg, #de53ed 60%, #ffb347 100%);
+}
+.about-values li:nth-child(3) .offer-icon {
+  background: linear-gradient(135deg, #ffb347 60%, #576fc7 100%);
+}
+.about-values h3 {
+  color: var(--black);
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  font-family: 'Knewave', cursive;
+  letter-spacing: 1px;
+}
+.about-values p {
+  color: #444;
+  font-size: 1.08rem;
+  margin-bottom: 0;
+  margin-top: 0;
+  line-height: 1.6;
+}
+
+/* Section containers */
+.about-idea,
+.about-values,
+.team-section,
+.about-story {
+  max-width: 1100px;
+  margin: 0 auto 48px auto;
+  text-align: center;
+  padding: 0 16px;
+}
+
+/* Section titles */
+.about-idea h2,
+.about-values h2,
+.team-section h2,
+.about-story h2 {
+  font-family: "Knewave", cursive;
+  color: var(--black);
+  margin-bottom: 12px;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+/* Attractive card row for mission and story */
+.about-cards-row {
+  display: flex;
+  gap: 36px;
+  justify-content: center;
+  align-items: stretch;
+  margin: 48px auto 56px auto;
+  max-width: 1100px;
+  flex-wrap: wrap;
+}
+.about-card {
+  margin-inline: 20px;
+  flex: 1 1 340px;
+  background: linear-gradient(135deg, #f7fafd 80%, #e9e4f0 100%);
+  border-radius: 22px;
+  box-shadow: 0 4px 32px #576fc733, 0 1.5px 8px #de53ed22;
+  padding: 38px 28px 28px 28px;
+  /* margin: 0; */
+  min-width: 260px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.4s, transform 0.4s;
+  opacity: 0.97;
+  animation-duration: 1.2s;
+  animation-fill-mode: both;
+}
+.about-card h2 {
+  font-family: 'Knewave', cursive;
+  color: var(--black);
+  margin-bottom: 18px;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.about-card p {
+  color: #444;
+  font-size: 1.08rem;
+  margin-bottom: 0;
+  margin-top: 0;
+  line-height: 1.6;
+}
+.about-card:hover {
+  box-shadow: 0 12px 48px #de53ed55, 0 2px 12px #576fc744;
+  transform: translateY(-8px) scale(1.03) rotate(-1deg);
+  opacity: 1;
+}
+
+/* Animations */
+@keyframes fadein-left {
+  from { opacity: 0; transform: translateX(-60px) scale(0.95);}
+  to { opacity: 1; transform: translateX(0) scale(1);}
+}
+@keyframes fadein-right {
+  from { opacity: 0; transform: translateX(60px) scale(0.95);}
+  to { opacity: 1; transform: translateX(0) scale(1);}
+}
+.animate-fadein-left { animation-name: fadein-left; }
+.animate-fadein-right { animation-name: fadein-right; }
+
+@keyframes popin {
+  to { opacity: 1; transform: translateY(0) scale(1);}
+}
+.card, .about-values li {
+  opacity: 0;
+  transform: translateY(40px) scale(0.97);
+  animation: popin 0.8s cubic-bezier(.23,1.02,.32,1) forwards;
+}
+.card { animation-delay: 0.2s; }
+.about-values li { animation-delay: 0.4s; }
+
+/* Responsive for cards row */
+@media (max-width: 900px) {
+  .about-cards-row {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+  .about-card {
+    max-width: 95vw;
+  }
+}
+@media (max-width: 1100px) {
+  .team-grid { gap: 18px; }
+  .card { width: 90vw; max-width: 340px; }
+}
+@media (max-width: 700px) {
+  .about-header .header-content { padding: 32px 8px 18px 8px; }
+  .about-header h1 { font-size: 1.5rem; }
+  .about-header p { font-size: 1rem; }
+  .team-grid { gap: 12px; }
+  .card { width: 98vw; max-width: 340px; }
+  .about-values ul { flex-direction: column; gap: 18px; }
+}
+
+/* Infinite animated gradient for header background */
+.about-header .header-bg {
+  animation: gradientMove 8s linear infinite alternate;
+  background-size: 200% 200%;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 50% 100%; }
+}
+
+/* Infinite animated border glow for cards */
+.card::before {
+  animation: borderGlow 2.5s linear infinite alternate;
+}
+@keyframes borderGlow {
+  0% { box-shadow: 0 0 24px 4px #576fc744, 0 0 0 #de53ed22; }
+  100% { box-shadow: 0 0 40px 12px #de53ed55, 0 0 16px #576fc744; }
+}
+
+/* What We Offer icon: rotate on hover and pulse always */
+.offer-icon {
+  transition: transform 0.7s cubic-bezier(.23,1.02,.32,1);
+  animation: pulse 2.2s infinite alternate cubic-bezier(.23,1.02,.32,1);
+}
+.about-values li:hover .offer-icon {
+  transform: rotate(360deg) scale(1.12);
+}
+
+
+

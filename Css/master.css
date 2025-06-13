@@ -1,0 +1,397 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Relief";
+  list-style: none;
+}
+h1 {
+  font-family: "Knewave", system-ui;
+}
+a {
+  text-decoration: none;
+}
+:root {
+  --white: #fff;
+  --a-hover: #9b87f5;
+  --off-white: #f8f8f8;
+  --gray: gray;
+  --black: #242423;
+}
+
+/* Nav-Bar-Start */
+/* ************* */
+nav {
+  height: 80px;
+  width: 100%;
+  background-color: #faf4ff;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav .logo{
+  width: 20%;
+  height: 100%;
+}
+nav .logo img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+nav ul {
+  width: 30%;
+  height: 4vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+nav ul li {
+  text-align: center;
+}
+nav ul li a {
+  width: 100%;
+  color: var(--black);
+  position: relative;
+  transition: all 0.3s ease;
+  font-size: large;
+}
+.menu-icon {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+.active {
+  color: var(--a-hover);
+}
+.active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--a-hover);
+  transform: scaleX(1);
+}
+nav ul li a:hover {
+  color: var(--a-hover);
+}
+
+/* *the-links-transition */
+/* ********************* */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  transform-origin: bottom right;
+  background-color: var(--a-hover);
+  transform: scaleX(0);
+
+  transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+nav .fa-bars{
+  display: none;
+}
+nav .join {
+  color: var(--white);
+  font-size: large;
+  text-align: center;
+  width: 10%;
+  padding: 10px;
+  border-radius: 10px;
+  background: linear-gradient(
+    60deg,
+    rgba(87, 111, 199, 1) 0%,
+    rgba(222, 83, 237, 1) 80%
+  );
+  transition: all ease-in-out 0.2s;
+}
+nav .join:hover {
+  position: relative;
+  translate: 0px -5px;
+}
+
+/* *Nav-End */
+/* ******** */
+
+/* *Header-Start */
+/* ************* */
+header {
+  height: 300px;
+  color: var(--white);
+  position: relative;
+  background-image: url("../Src/header.jfif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* padding: 50px 0; */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom:20px;
+
+    background: 
+    linear-gradient(120deg, rgba(87, 111, 199, 0.264) 0%, rgba(206, 83, 237, 0.396) 100%),
+    url('../Src/about/bg5.png') center/cover no-repeat;
+  z-index: 1;
+  filter: brightness(0.85) saturate(1.2);
+  animation: gradientMove 8s linear infinite alternate;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 50% 100%; }
+}
+
+/* *background-image-shadow-layer */
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.584);
+  z-index: 0;
+}
+header img{
+  height: 100%;
+  width: 40%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+.header-content {
+  position: relative;
+  margin-inline:auto;
+  z-index: 2;
+}
+.header-content h1 {
+  text-align: center;
+  letter-spacing: 5px;
+  word-spacing: 5px;
+}
+.header-content p {
+  font-size: large;
+}
+.header-content .buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.buttons a {
+  margin-block: 30px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition-duration: 0.3s;
+}
+#followBtn {
+  color: white;
+}
+
+.teams {
+  color: white;
+  background: linear-gradient(
+    60deg,
+    rgba(87, 111, 199, 1) 0%,
+    rgba(222, 83, 237, 1) 100%
+  );
+}
+.teams:hover {
+  position: relative;
+  translate: 0px -5px;
+}
+header .join {
+  background-color: var(--white);
+  border: solid var(--a-hover) 2px;
+  color: var(--a-hover);
+  font-weight: 600;
+}
+.join:hover {
+  background-color: var(--a-hover);
+  color: var(--white);
+}
+
+/* *Our-featured-Teams-Sect */
+/* *********************** */
+.teams-sect{
+  padding: 30px ;
+}
+.our-teams {
+  margin-block: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 50px;
+}
+/* *Heading */
+/* ******** */
+.our-teams .heading h1 {
+  letter-spacing: 5px;
+}
+
+.our-teams .heading p {
+  font-weight: 600;
+  opacity: 0.5;
+}
+
+/* *Cards-section */
+/* ************* */
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.cards .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 450px;
+  max-height: 650px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 18px 75px -31px rgba(0, 0, 0, 0.226);
+  overflow: hidden;
+  transition-duration: 0.3s;
+}
+
+.cards .card:hover {
+  box-shadow: 2px 18px 75px -31px rgba(0, 0, 0, 0.42);
+}
+/* *image-design */
+.cards .card img {
+  object-fit: cover;
+  flex-grow: 1;
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 300px;
+  transform-origin: bottom;
+  transition-duration: 0.3s;
+}
+.cards .card img:hover {
+  scale: 1.1;
+}
+/* card-team-details */
+.cards .card .card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-block: 20px;
+  padding: 0 30px;
+  letter-spacing: 1.3px;
+}
+
+.card-info h1 {
+  font-size: 1.4rem;
+}
+/* buttons */
+.cards .buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 50px;
+  width: 100%;
+}
+.cards .card .buttons .follow {
+  font-weight: 600;
+  color: var(--black);
+}
+
+.our-teams > .teams {
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: all ease-in-out 0.2s;
+  align-self: flex-start;
+  margin-left: 100px;
+}
+/* Footer-section */
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background-color: var(--black);
+  color: var(--white);
+}
+footer ul li a {
+  color: var(--white);
+}
+footer section {
+  margin-block: 50px;
+}
+footer section h2 {
+  display: inline-block;
+  border-bottom: solid 2px;
+  border-color: #9b87f5;
+}
+
+/* techno-footer-section */
+/* ==================== */
+footer .techno {
+  max-width: 300px;
+  padding-inline: 20px;
+}
+footer .techno p {
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+footer .techno ul {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  height: 50px;
+  margin-top: 20px;
+}
+
+footer .techno ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #313642;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: all ease-in-out .2s;
+}
+
+footer .techno ul li a i {
+  scale: 1.2;
+  
+}
+/* footer-social-transition */
+footer .techno ul li:hover {
+  background-color: var(--a-hover);
+  scale: 1.22;
+}
+
+
+/* second-footer-section   Quick links*/
+footer :where(.quick-links ul, .featured-teams ul) {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+footer :where(.quick-links ul li a, .featured-teams ul li a) {
+  transition: all ease 0.3s;
+}
+footer :where(.quick-links ul li a, .featured-teams ul li a):hover {
+  color: var(--a-hover);
+  padding-left: 7px;
+}
+
+footer .contact-us p {
+  margin-block:20px;
+}
