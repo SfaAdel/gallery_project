@@ -72,25 +72,34 @@
   header .header-content p{
     font-size: small;
   }
+  .cards .card{
+    max-height: fit-content;
+  }
   .our-teams p {
     padding: 20px;
   }
   footer {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-    /* grid-template-rows: 1fr 1fr 1fr; */
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
     text-align: center;
-    padding: 20px;
+    padding-top: 20px;
   }
-  footer .techno {
+  footer .techno{
     width: 100%;
-    margin: auto;
-    grid-column: 1 / span 2;
+    margin: 0;
+    padding: 0;
   }
-  footer .contact-us {
-    grid-column: 1 / span 2;
+  footer section{
+    width: 100%;
+  }
+  footer .social-links{
+  justify-content: space-evenly;
+  }
+  .pass-signup {
+    display: flex;
+    flex-direction: column;
   }
 }
 @media (max-width: 500px) {
@@ -139,6 +148,7 @@
     font-size: large;
   }
   .image-sect {
+    height: fit-content;
     padding: 15px 0;
   }
   .image-sect .main-view {
@@ -150,10 +160,11 @@
   }
   .image-sect .side-view {
     width: 100%;
-    height: 5dvh;
+    height: 10dvh;
     padding: 0;
     margin: 10px 0;
     justify-content: space-evenly;
+    flex-wrap: nowrap;
   }
   .team-page .cards .card {
     margin: 0;
